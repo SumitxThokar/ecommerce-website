@@ -16,46 +16,283 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Andika';
-    
+    font-family: 'Quicksand', 'Andika', Arial, sans-serif;
+    color: #204120;
+    letter-spacing: 0.02em;
+}
+
+:root {
+    --primary-green: #6abf69;
+    --secondary-green: #e6f4ea;
+    --accent-green: #a6e9b5;
+    --text-dark: #204120;
+    --bg-light: #f9fdf7;
+    --card-shadow: 0 4px 16px rgba(106,191,105,0.08);
+    --leaf-green: #8fd19e;
+    --soft-gradient: linear-gradient(135deg, #e6f4ea 0%, #d2f1c9 100%);
+    --premium-green: #6abf69;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+    background: var(--bg-light);
+}
+
+body{
+    overflow-x:hidden;
+    max-width: 100%;
+    margin:0;
+    margin-bottom: 150px;
+    background: var(--soft-gradient);
+    font-size: 1.13rem;
+    line-height: 1.8;
+    letter-spacing: 0.01em;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: -1;
+    background: url('https://www.transparenttextures.com/patterns/leaf.png');
+    opacity: 0.12;
+    pointer-events: none;
 }
 #bg{
-    background-image: url(https://source.unsplash.com/featured/?men,fashion,sneakers);
-    /*https://images.unsplash.com/photo-1549942686-486aa99d2223*/
+    background-image: url(https://source.unsplash.com/featured/?plants,greenery,nature);
     background-repeat: no-repeat;
     min-height:450px;
     background-attachment: fixed;
     background-position: center;
     background-size:cover;
     text-align: center;
+    border-radius: 0 0 2rem 2rem;
+    box-shadow: var(--card-shadow);
 }
 #banner_content {
-    background-color: rgba(0, 0, 0, 0.7);
-    
+    background: rgba(255, 255, 255, 0.94);
+    color: var(--text-dark) !important;
+    border-radius: 2rem;
+    box-shadow: 0 8px 32px rgba(106,191,105,0.15);
+    padding: 3rem 2.2rem;
+    margin-bottom: 2.5rem;
+    border: 2px solid var(--leaf-green);
+    position: relative;
 }
+#banner_content::after {
+    content: '\1F331'; /* Unicode for seedling emoji as a leaf accent */
+    font-size: 2.5rem;
+    position: absolute;
+    right: 2.5rem;
+    top: 1.5rem;
+    opacity: 0.13;
+}
+
 .carousel-inner img {
     width: 100%;
     height:100%;
+    border-radius: 1rem;
+    box-shadow: var(--card-shadow);
 }
 .footer{
     position: absolute;
     margin-top: 50px;
-    background-color: #141414;
-    min-height:150px;
+    background: linear-gradient(90deg, #e6f4ea 0%, #6abf69 100%);
+    min-height:120px;
     padding-top:40px;
     width: 100%;
-   
     bottom: 0;
-    
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: 1.13rem;
+    letter-spacing: 0.04em;
+    border-top-left-radius: 2.5rem;
+    border-top-right-radius: 2.5rem;
+    box-shadow: 0 -2px 18px rgba(106,191,105,0.13);
+    border-top: 3px solid var(--leaf-green);
 }
-.container  a {
-    color:black;
+.footer .container {
+    padding-bottom: 1.2rem;
+}
+.footer .text-muted {
+    color: #3e6642 !important;
+}
+
+.container a {
+    color: var(--text-dark);
+    transition: color 0.2s, box-shadow 0.2s;
+    border-radius: 0.7rem;
+    padding: 0.14rem 0.42rem;
+    font-weight: 500;
 }
 .container a:hover{
-    color:grey;
-    
+    color: var(--primary-green);
+    background: var(--secondary-green);
+    text-decoration: none;
+    box-shadow: 0 2px 10px rgba(106,191,105,0.09);
 }
+
+/* Cart Table Styling */
+.table {
+    background: #fff;
+    border-radius: 1.2rem;
+    box-shadow: 0 2px 14px rgba(106,191,105,0.09);
+    overflow: hidden;
+    margin-bottom: 2.5rem;
+}
+.table th {
+    background: var(--leaf-green);
+    color: var(--text-dark);
+    font-size: 1.15rem;
+    font-family: 'Quicksand', Arial, sans-serif;
+    border: none;
+    letter-spacing: 0.03em;
+    padding: 1.15rem 1rem;
+}
+.table td {
+    border-top: 1.5px solid #e6f4ea;
+    font-size: 1.08rem;
+    padding: 1.1rem 1rem;
+    color: #274d27;
+}
+.table-striped tbody tr:nth-of-type(odd) {
+    background: var(--secondary-green);
+}
+.table-striped tbody tr:hover {
+    background: #d2f1c9;
+}
+
+/* Divider with leaf */
+.leaf-divider {
+    width: 110px;
+    height: 32px;
+    margin: 2.5rem auto 1.7rem auto;
+    background: url('https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f331.svg') center/contain no-repeat;
+    opacity: 0.23;
+}
+
 #size{
     max-height:200px;
 }
+
+.card {
+    border-radius: 1.4rem !important;
+    box-shadow: 0 2px 12px rgba(106,191,105,0.10);
+    border: 1.5px solid var(--secondary-green) !important;
+    background: #fff;
+    transition: transform 0.18s, box-shadow 0.18s, border 0.18s;
+    margin-bottom: 1.7rem;
+    padding-bottom: 0.6rem;
+}
+.card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 12px 32px rgba(106,191,105,0.17);
+    border: 1.5px solid var(--primary-green) !important;
+}
+
+.btn-warning {
+    background: var(--primary-green) !important;
+    border: none !important;
+    color: #fff !important;
+    font-weight: 700;
+    border-radius: 1.2rem !important;
+    box-shadow: 0 2px 8px rgba(106,191,105,0.12);
+    padding: 0.85rem 2.3rem;
+    font-size: 1.13rem;
+    letter-spacing: 0.04em;
+    transition: background 0.18s, color 0.18s, box-shadow 0.18s, transform 0.18s;
+    outline: none !important;
+    border-bottom: 3px solid var(--primary-green) !important;
+}
+.btn-warning:hover, .btn-warning:focus {
+    background: #4ea24d !important;
+    color: #fff !important;
+    box-shadow: 0 6px 24px rgba(106,191,105,0.17);
+    transform: translateY(-2px) scale(1.04);
+    border-bottom: 3px solid #388e3c !important;
+}
+
+.jumbotron {
+    background: var(--secondary-green) !important;
+    border-radius: 2rem;
+    box-shadow: 0 8px 32px rgba(106,191,105,0.13);
+    color: var(--text-dark);
+    padding: 3rem 2.2rem;
+    border: 2px solid var(--leaf-green);
+    margin-bottom: 2.2rem;
+    position: relative;
+}
+.jumbotron::before {
+    content: '';
+    display: block;
+    width: 110px;
+    height: 32px;
+    margin: 0 auto 1.2rem auto;
+    background: url('https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f331.svg') center/contain no-repeat;
+    opacity: 0.18;
+}
+
+
+.breadcrumb {
+    background: #f3fbe9 !important;
+    border-radius: 0.6rem;
+    padding: 0.6rem 1.2rem;
+}
+
+.figure-caption h6, .figure-caption {
+    color: var(--text-dark);
+    font-size: 1.04rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Quicksand', 'Andika', Arial, sans-serif;
+    font-weight: 800;
+    color: var(--text-dark);
+    letter-spacing: 0.04em;
+    margin-bottom: 0.7rem;
+}
+h1 {
+    font-size: 2.7rem;
+    margin-bottom: 1.1rem;
+}
+h2 {
+    font-size: 2.1rem;
+}
+h3 {
+    font-size: 1.6rem;
+}
+
+
+/* Add more plant shop themed accents */
+hr {
+    border-top: 2px solid var(--primary-green);
+    width: 60%;
+    margin: 2rem auto;
+    opacity: 0.4;
+}
+
+.text-center.pt-4.h3 {
+    color: var(--primary-green);
+    font-family: 'Delius Swash Caps', cursive;
+    letter-spacing: 0.06em;
+    margin-bottom: 1.5rem;
+}
+
+.img-fluid {
+    border-radius: 1.2rem;
+    box-shadow: 0 2px 14px rgba(106,191,105,0.10);
+    border: 2px solid #e6f4ea;
+    margin-bottom: 0.7rem;
+}
+
+/* Add plant icon to headings if desired */
+.heading-plant::before {
+    content: '\1F331';
+    font-size: 1.5rem;
+    margin-right: 0.4rem;
+    vertical-align: middle;
+    opacity: 0.7;
+}
+
 

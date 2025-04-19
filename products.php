@@ -24,7 +24,7 @@ include 'includes/check-if-added.php';
 <div class="container" style="margin-top:65px">
          <!--jumbutron start-->
         <div class="jumbotron text-center">
-            <h1>Welcome to Planet Shopify!</h1>
+            <h1>Welcome to Plant Shopify!</h1>
             <p>We have wide range of products for you.No need to hunt around,we have all in one place</p>
         </div>
         <!--jumbutron ends-->
