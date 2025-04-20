@@ -13,5 +13,4 @@ The *Plant Shopify* is a ecommerce website.Developed using php in backend and my
 - Start the Apache and MySQL modules using the **XAMPP** controller.
 - Open the **phpMyAdmin** and create a database **"ecommerce"**. 
 - Import the **ecommerce.sql** file.
-- Open the htdocs folder in the xampp folder. Copy paste the folder **Plant-Shopify-ecommerce-website**.
 - Open the browser (chrome), type *localhost/ecommerce-website* and you should see the index page of the website.
